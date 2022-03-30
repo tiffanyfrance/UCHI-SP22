@@ -1,0 +1,50 @@
+[
+    {
+      "country": "US",
+      "cases": 452
+    },
+    {
+      "country": "PA",
+      "cases": 492
+    },
+    {
+      "country": "CA",
+      "cases": 420
+    },
+    {
+      "country": "MX",
+      "cases": 30
+    },
+    {
+      "country": "SV",
+      "cases": 115
+    },
+    {
+      "country": "CL",
+      "cases": 75
+    },
+    {
+      "country": "CO",
+      "cases": 237
+    },
+    {
+      "country": "BR",
+      "cases": 336
+    },
+    {
+      "country": "AR",
+      "cases": 142
+    },
+    {
+      "country": "UY",
+      "cases": 320
+    },
+    {
+      "country": "BO",
+      "cases": 152
+    },
+    {
+      "country": "EC",
+      "cases": 263
+    }
+  ]
