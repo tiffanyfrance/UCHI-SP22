@@ -38,5 +38,5 @@ d3.csv('long-terminterest-monthly.csv').then(data => {
     .datum(data)
     .attr("fill", "none")
     .attr("stroke", "steelblue")
-    .attr("d", line)
+    .attr("d", line);
 });
