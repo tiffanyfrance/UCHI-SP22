@@ -38,18 +38,28 @@
     svg {
       max-height: 100vh;
     }
+
+    path.domain {
+      display: none;
+    }
+
+    line {
+      stroke: #eee;
+    }
   </style>
 </head>
 
 <body>
   <div id="container">
-    <h1>Cases by Country Code</h1>
-    <p>This bar chart uses covid.json as the dataset. This graph shows comparison of quantities.
+    <h1>Interest Rates by Year (US)</h1>
+    <p>This line chart uses long-terminterest-monthly.csv 
+      as the dataset. This graph shows change of interest rates 
+      over time.
     </p>
-    <div id="chart"></div>
+   <div id="chart"></div>
   </div>
 </body>
 <script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="bar.js"></script>
+<script src="line.js"></script>
 
 </html>
