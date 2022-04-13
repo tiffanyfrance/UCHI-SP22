@@ -24,7 +24,6 @@ d3.json('climate-jan.json').then((data) => {
   
     const binGroups = svg.append("g");
   
-    //tries to fit data in 10 bins but not guarenteed
     const bins = d3.bin().thresholds(10).value(d => d.average)(data);
 
     let g = binGroups.selectAll("g")

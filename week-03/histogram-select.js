@@ -1,10 +1,4 @@
 Promise.all([
-    // https://www.ncdc.noaa.gov/cdo-web/webservices/v2#gettingStarted
-    // d3.json('<URL>', {
-    //   headers: new Headers({
-    //     "token": "<TOKEN>"
-    //   })
-    // }),
     d3.json('climate-jan.json'),
     d3.json('climate-feb.json'),
     d3.json('climate-mar.json')
@@ -38,9 +32,8 @@ Promise.all([
     const binGroups = svg.append("g");
   
     function updateChart(i) {
-      //tries to fit data in 10 bins but not guarenteed
       const bins = d3.bin().thresholds(10).value(d => d.average)(data[i]);
-  console.log(bins)
+
       binGroups.selectAll("g")
         .data(bins, d => d.x0)
         .join(
