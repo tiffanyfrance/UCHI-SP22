@@ -43,7 +43,7 @@ Promise.all([
             g.append("rect")
               .attr("x", d => x(d.x0) + padding / 2)
               .attr("y", height - margin.bottom)
-              .attr("width", d => d3.max([0, x(d.x1) - x(d.x0) - padding]))
+              .attr("width", d => x(d.x1) - x(d.x0) - padding)
               .attr("height", 0)
               .attr("fill", "steelblue")
               .transition()

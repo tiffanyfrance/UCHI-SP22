@@ -27,13 +27,13 @@ d3.json('climate-jan.json').then((data) => {
     const bins = d3.bin().thresholds(10).value(d => d.average)(data);
 
     let g = binGroups.selectAll("g")
-      .data(bins, d => d.x0)
+      .data(bins)
       .join("g");
   
     g.append("rect")
       .attr("x", d => x(d.x0) + padding / 2)
       .attr("y", height - margin.bottom)
-      .attr("width", d => d3.max([0, x(d.x1) - x(d.x0) - padding]))
+      .attr("width", d => x(d.x1) - x(d.x0) - padding)
       .attr("height", 0)
       .attr("fill", "steelblue")
       .transition()
