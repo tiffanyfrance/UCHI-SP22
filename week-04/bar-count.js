@@ -3,11 +3,6 @@ d3.json('covid.json').then(data => {
     width = 600,
     margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
 
-  const tooltip = d3.select("body").append("div")
-    .attr("class", "svg-tooltip")
-    .style("position", "absolute")
-    .style("visibility", "hidden");
-
   let x = d3.scaleBand()
     .domain(data.map(d => d.country))
     .range([margin.left, width - margin.right])

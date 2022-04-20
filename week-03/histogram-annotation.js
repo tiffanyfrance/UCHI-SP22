@@ -104,11 +104,12 @@ Promise.all([
   function annotate(i) {
     let month = d3.select("select").node().options[i].text;
     let temp = d3.min(data[i], d => d.average);
-    let str = `The coldest average in ${month} was <span style="color:red; white-space: nowrap;">${temp}℉</span>.`
+    let str = `The coldest average in <b>${month}</b> was 
+      <b>${temp}℉</b>.`
 
     svg.append("foreignObject")
       .attr("x", 320)
-      .attr("y", 100)
+      .attr("y", 80)
       .attr("width", 120)
       .attr("height", 100)
       .append('xhtml:div')

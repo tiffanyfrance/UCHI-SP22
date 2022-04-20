@@ -3,6 +3,7 @@ d3.json('covid.json').then(data => {
     width = 600,
     margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
 
+  // Create tooltip div
   const tooltip = d3.select("body").append("div")
     .attr("class", "svg-tooltip")
     .style("position", "absolute")
@@ -50,6 +51,7 @@ d3.json('covid.json').then(data => {
     .attr("y", d => y(d.cases))
     .attr("height", d => y(0) - y(d.cases));
 
+  // Placing tooltip
   bar.selectAll("rect")
     .on("mousemove", function (event, d) {
       tooltip

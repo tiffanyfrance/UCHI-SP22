@@ -51,10 +51,9 @@ d3.json('covid.json').then(data => {
     .attr('y', d => y(d.cases) - 5)
     .attr('text-anchor', 'middle');
 
+  // Annotation
   let total = d3.sum(data, d => d.cases).toLocaleString();
-  let str = `There are 
-    <span style="color:red;">${total}</span>
-    COVID cases total in the data.`
+  let str = `There are <span style="color:red;">${total}</span> COVID cases total in the data.`
 
   svg.append("foreignObject")
     .attr("x", 420)
