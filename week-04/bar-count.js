@@ -3,6 +3,11 @@ d3.json('covid.json').then(data => {
     width = 600,
     margin = ({ top: 25, right: 30, bottom: 35, left: 40 });
 
+  const tooltip = d3.select("body").append("div")
+    .attr("class", "svg-tooltip")
+    .style("position", "absolute")
+    .style("visibility", "hidden");
+
   let x = d3.scaleBand()
     .domain(data.map(d => d.country))
     .range([margin.left, width - margin.right])
@@ -42,12 +47,29 @@ d3.json('covid.json').then(data => {
     .attr("fill", "#4682B4")
     .attr("x", d => x(d.country))
     .attr("width", x.bandwidth())
+    .attr("y", height - margin.bottom)
+    .attr("height", 0)
+    .transition()
+    .duration(2000)
+    .delay((d, i) => i * 100)
     .attr("y", d => y(d.cases))
     .attr("height", d => y(0) - y(d.cases));
-  
+
   bar.append('text')
-    .text(d => d.cases)
-    .attr('x', d => x(d.country) + (x.bandwidth()/2))
-    .attr('y', d => y(d.cases) - 5)
-    .attr('text-anchor', 'middle'); 
+    .text(d => 0)
+    .attr('x', d => x(d.country) + (x.bandwidth() / 2))
+    .attr("y", height - margin.bottom - 5)
+    .attr('text-anchor', 'middle')
+    .transition()
+    .duration(2000)
+    .delay((d, i) => i * 100)
+    .tween("text", function(d) {
+      let i = d3.interpolate(this.textContent, d.cases)
+
+      return function(t) {
+        this.textContent = Math.round(i(t));
+      };
+    })
+    .attr('y', d => y(d.cases) - 5);
+
 });

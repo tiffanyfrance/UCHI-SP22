@@ -38,6 +38,7 @@ d3.json('climate-jan.json').then((data) => {
       .attr("fill", "steelblue")
       .transition()
       .duration(750)
+      .delay((d, i) => i * 100)
       .attr("y", d => y(d.length))
       .attr("height", d => height - margin.bottom - y(d.length));
   
