@@ -21,7 +21,9 @@ Promise.all([
   const height = 610,
     width = 975;
 
-  const color = d3.scaleQuantize().domain([1, 10])
+  // Quantize evenly breakups domain into range buckets
+  const color = d3.scaleQuantize()
+    .domain([1, 10]) //1% - 10% unemployment
     .range(d3.schemeBlues[9]);
 
   const path = d3.geoPath();
