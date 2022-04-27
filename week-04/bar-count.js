@@ -62,6 +62,7 @@ d3.json('covid.json').then(data => {
       let i = d3.interpolate(this.textContent, d.cases)
 
       return function(t) {
+        // console.log(t)
         this.textContent = Math.round(i(t));
       };
     })

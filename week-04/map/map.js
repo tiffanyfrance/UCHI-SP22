@@ -25,6 +25,7 @@ Promise.all([
   const color = d3.scaleQuantize()
     .domain([1, 10]) //1% - 10% unemployment
     .range(d3.schemeBlues[9]);
+    console.log(d3.schemeBlues[9])
 
   const path = d3.geoPath();
 
