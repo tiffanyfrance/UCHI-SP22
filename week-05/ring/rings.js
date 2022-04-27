@@ -45,8 +45,8 @@ function createRing({ year, values }) {
     })
     .join("tspan")
     .attr("x", 0)
-    .attr("y", (_, i) => `${i * 1.1}em`)
-    .attr("font-weight", (_, i) => i ? null : "bold")
+    .attr("y", (d, i) => `${i * 1.1}em`)
+    .attr("font-weight", (d, i) => i ? null : "bold")
     .text(d => d);
 
   svg.append("text")

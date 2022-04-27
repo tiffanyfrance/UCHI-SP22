@@ -15,7 +15,7 @@ d3.json('flare.json')
   let arc = d3.arc()
     .startAngle(d => d.x0)
     .endAngle(d => d.x1)
-    .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
+    .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005)) //between arcs
     .padRadius(radius / 2)
     .innerRadius(d => d.y0)
     .outerRadius(d => d.y1 - 1);
