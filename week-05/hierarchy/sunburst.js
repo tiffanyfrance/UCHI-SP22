@@ -7,10 +7,9 @@ d3.json('flare.json')
   let svg = d3.select('svg')
     .append('g');
 
-//   let color = d3.scaleOrdinal(d3.quantize(t => d3.interpolateSpectral(t * 0.9 + 0.2), data.children.length + 1));
-  let color =d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
-
-  let format = d3.format(",d");
+  // let color = d3.scaleOrdinal(d3.quantize(t => d3.interpolateSpectral(t * 0.9 + 0.2), data.children.length + 1));
+  // let color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
+  let color = d3.scaleOrdinal(['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf','#999999']);
 
   let arc = d3.arc()
     .startAngle(d => d.x0)
