@@ -1,0 +1,178 @@
+<!-- <!DOCTYPE html> -->
+<meta charset="utf-8">
+<head>
+  <title>Force layout (x axis)</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+</head>
+
+<style>
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+h1 {
+    margin-bottom: 0px;
+}
+h2 {
+    font-size: 1em;
+    font-weight: normal;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+}
+.title {
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+.flex {
+    display: flex;
+    width: 100%;
+    height: 300px;
+}
+.flex .col {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+.svg-tooltip {
+      background: rgba(69, 77, 93, .9);
+      border-radius: 5px;
+      color: #fff;
+      display: block;
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: none;
+      max-width: 320px;
+      padding: 1rem;
+      position: absolute;
+      text-overflow: ellipsis;
+      white-space: pre;
+      z-index: 300;
+      visibility: hidden;
+    }
+
+@media (max-width: 768px) {
+    .flex .col {
+        min-width: 100%;
+    }
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Strangest Souvenir</h1>
+            <h2>
+                Data is Beautiful Challenge, October 2018  &mdash;
+                <a href="https://redd.it/99foe4">Data set</a>
+            </h2>
+        </div>
+        <div class="flex">
+            <div class="col environment">
+                <h2>&mdash; ENVIRONMENT &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+            <div class="col religious">
+                <h2>&mdash; RELIGIOUS &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+            <div class="col alcohol-drugs">
+                <h2>&mdash; ALCOHOL/DRUGS &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="col animal">
+                <h2>&mdash; ANIMALS &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+            <div class="col injury">
+                <h2>&mdash; INJURIES &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+            <div class="col music">
+                <h2>&mdash; MUSIC &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="col clothing">
+                <h2>&mdash; CLOTHING &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+            <div class="col person">
+                <h2>&mdash; PEOPLE &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+            <div class="col food">
+                <h2>&mdash; FOOD &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="col sexual">
+                <h2>&mdash; SEXUAL &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+            <div class="col weapon">
+                <h2>&mdash; WEAPON &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+            <div class="col crime">
+                <h2>&mdash; CRIME &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="col experience">
+                <h2>&mdash; EXPERIENCE &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+            <div class="col local">
+                <h2>&mdash; LOCAL &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="col souvenir">
+                <h2>&mdash; SOUVENIR &mdash;</h2>
+                <svg width="100%" height="200">
+                  <g transform="translate(50, 100)"></g>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="cluster.js"></script>
+</body>
+</html>
