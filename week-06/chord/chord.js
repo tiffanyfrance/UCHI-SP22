@@ -22,8 +22,8 @@ d3.csv("degrees.csv").then((data) => {
     .innerRadius(innerRadius)
     .outerRadius(outerRadius);
 
-    // const ribbon = d3.ribbonArrow()
-  const ribbon = d3.ribbon()
+    const ribbon = d3.ribbonArrow()
+  // const ribbon = d3.ribbon()
     .radius(innerRadius - 0.5)
     .padAngle(1 / innerRadius);
 
