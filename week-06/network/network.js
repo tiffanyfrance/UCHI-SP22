@@ -1,4 +1,4 @@
-d3.json('data.json').then(data => {
+d3.json('network_data.json').then(data => {
     let height = 600,
       width = d3.select("#chart").style("width").slice(0, -2);
 
@@ -7,6 +7,7 @@ d3.json('data.json').then(data => {
       .attr("viewBox", [0, 0, width, height]); 
 
     let { nodes, links } = data;
+    console.log(nodes)
 
     const radius = 25;
 
@@ -16,7 +17,7 @@ d3.json('data.json').then(data => {
         .links(links)
         .distance(100)
       )
-      .force("charge", d3.forceManyBody())
+      .force("charge", d3.forceManyBody()) //strength
       .force("center", d3.forceCenter(width / 2, height / 2))
       .force("collision", d3.forceCollide().radius(radius + 4));
     
@@ -42,8 +43,7 @@ d3.json('data.json').then(data => {
         .data(links);
   
       link
-        .enter()
-        .append("line")
+        .join("line")
         .style("stroke", "#aaa")
         .attr("stroke-width", 1.5)
         .merge(link)
@@ -57,33 +57,32 @@ d3.json('data.json').then(data => {
         .data(nodes);
   
       node
-        .enter()
-        .append("circle")
+        .join("circle")
         .attr("stroke", "#fff")
         .attr("stroke-width", 1.5)
         .attr("r", radius)
-        .attr("fill", "#eee")
-        // .attr("fill", (d) => d.color)
+        // .attr("fill", "#eee")
+        .attr("fill", (d) => d.color)
         .call(drag)
         .merge(node)
         .attr("cx", d => d.x)
         .attr("cy", d => d.y)
   
-      const imgSize = radius;
-      const halfImgSize = imgSize / 2;
+      // const imgSize = radius;
+      // const halfImgSize = imgSize / 2;
   
-      let img = svg
-        .selectAll("image")
-        .data(nodes);
+      // let img = svg
+      //   .selectAll("image")
+      //   .data(nodes);
   
-      img.enter()
-        .append("svg:image")
-        .attr('width', imgSize)
-        .attr('height', imgSize)
-        .attr("xlink:href", (d, i) => `images/${i}.jpeg`)
-        .merge(img)
-        .attr("x", d => d.x - halfImgSize)
-        .attr("y", d => d.y - halfImgSize)
+      // img.enter()
+      //   .append("svg:image")
+      //   .attr('width', imgSize)
+      //   .attr('height', imgSize)
+      //   .attr("xlink:href", (d, i) => `images/${i}.jpeg`)
+      //   .merge(img)
+      //   .attr("x", d => d.x - halfImgSize)
+      //   .attr("y", d => d.y - halfImgSize)
   
     });
  });

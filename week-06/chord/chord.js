@@ -1,7 +1,9 @@
-d3.csv("degrees.csv", (d) => {
-  d.value = +d.value;
-  return d;
-}).then((data) => {
+d3.csv("degrees.csv").then((data) => {
+  
+  for (let d of data) {
+    d.value = +d.value;
+  }
+
   const names = ["Males", "Females", "Associate", "Bachelors", "Masters", "Doctors"];
 
   const index = new Map(names.map((name, i) => [name, i]));
@@ -10,8 +12,6 @@ d3.csv("degrees.csv", (d) => {
   for (const { source, target, value } of data) {
     matrix[index.get(source)][index.get(target)] = value;
   }
-
-  console.log(matrix);
 
   const height = 800,
     width = 800,
